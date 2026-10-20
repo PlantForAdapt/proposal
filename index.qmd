@@ -1,20 +1,30 @@
 ---
-title: "Author citation list"
+title: "Material for the PlantForAdapt proposal"
 author: "Sylvain Schmitt"
 format: html
 editor: visual
 ---
 
-# Scholar
+# Project Map
 
-```{r}
+The first material is a map of the study sites.
+
+```{r maps}
+knitr::include_graphics("fig.png")
+```
+
+# Author references list
+
+The second material is a code for a curated list of references for a given collaborator (example with myself).
+
+```{r references}
 #| results: asis
 library(scholar)
 
 scholar_id <- "3n0aRksAAAAJ" # Daniel Luis Mascia Vieira
 scholar_id <- "0f_YV1wAAAAJ" # Pedro Brancalion
 scholar_id <- "lauW7mQAAAAJ" # Otavio C. Campoe
-
+scholar_id <- "sM0Z2yIAAAAJ" # Sylvain SChmitt
 # this is your author scholar Id, it'll be found in the adress of your scholar profile after user=and before &
 
 #Get publication record from scholar
@@ -22,11 +32,5 @@ df <- get_publications(scholar_id)
 colnames(df) <- c("title","authors","journal","number",
                   "total_citations","publication_date","cid","pubid")
 # unfortunately the doi is not linked, so I'll just format all articles:
-format_publications(scholar_id, "Campoe") |> cat(sep='\n\n')
-```
-
-# ORCID
-
-```{r}
-library(rorcid)
+format_publications(scholar_id, "Schmitt") |> cat(sep='\n\n')
 ```

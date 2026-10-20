@@ -2,18 +2,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Sylvain Schmitt">
 
-<title>Author citation list</title>
+<title>Material for the PlantForAdapt proposal</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -22,6 +28,7 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -59,20 +66,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <script src="index_files/libs/clipboard/clipboard.min.js"></script>
-<script src="index_files/libs/quarto-html/quarto.js"></script>
+<script src="index_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="index_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="index_files/libs/quarto-html/popper.min.js"></script>
 <script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="index_files/libs/quarto-html/anchor.min.js"></script>
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="index_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="index_files/libs/bootstrap/bootstrap-13844cc6d0419a59b53de95cbe539e81.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
 
-<body class="fullcontent">
+<body class="fullcontent quarto-light">
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 
@@ -80,7 +88,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Author citation list</h1>
+<h1 class="title">Material for the PlantForAdapt proposal</h1>
 </div>
 
 
@@ -99,215 +107,136 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
+
 </header>
 
-<section id="scholar" class="level1">
-<h1>Scholar</h1>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scholar)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>scholar_id <span class="ot">&lt;-</span> <span class="st">"3n0aRksAAAAJ"</span> <span class="co"># Daniel Luis Mascia Vieira</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>scholar_id <span class="ot">&lt;-</span> <span class="st">"0f_YV1wAAAAJ"</span> <span class="co"># Pedro Brancalion</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>scholar_id <span class="ot">&lt;-</span> <span class="st">"lauW7mQAAAAJ"</span> <span class="co"># Otavio C. Campoe</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># this is your author scholar Id, it'll be found in the adress of your scholar profile after user=and before &amp;</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">#Get publication record from scholar</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">get_publications</span>(scholar_id)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(df) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"title"</span>,<span class="st">"authors"</span>,<span class="st">"journal"</span>,<span class="st">"number"</span>,</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>                  <span class="st">"total_citations"</span>,<span class="st">"publication_date"</span>,<span class="st">"cid"</span>,<span class="st">"pubid"</span>)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># unfortunately the doi is not linked, so I'll just format all articles:</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">format_publications</span>(scholar_id, <span class="st">"Campoe"</span>) <span class="sc">|&gt;</span> <span class="fu">cat</span>(<span class="at">sep=</span><span class="st">'</span><span class="sc">\n\n</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Sumnall, MJ., Raigosa-Garcia, I., Carter, DR., Albaugh, TJ., <strong>Campoe</strong>, OC., &amp; … (2025). Assessing Methods to Measure Stem Diameter at Breast Height with High Pulse Density Helicopter Laser Scanning. <em>Remote Sensing</em>. 17 (2), 229</p>
-<p>Cook, R., Fox, TR., Allen, HL., Cohrs, CW., Ribas-Costa, V., Trlica, A., Ricker, M., &amp; … (2024). Forest soil classification for intensive pine plantation management:“Site Productivity Optimization for Trees” system. <em>Forest Ecology and Management</em>. 556, 121732</p>
-<p>Sumnall, MJ., Carter, DR., Albaugh, TJ., Platt, E., Host, T., Cook, RL., &amp; … (2024). Evaluating the transferability of airborne laser scanning derived stem size prediction models for Pinus taeda L. stem size estimation to two different locations and&nbsp;…. <em>International Journal of Remote Sensing</em>. 45 (16), 5267-5294</p>
-<p>Santos, JA dos., <strong>Campoe</strong>, OC., Souza, CR de., Marrichi, AHC., Carneiro, RL., &amp; … (2024). Stomatal conductance models in Brazilian forest plantations: genotype and environmental effects on eucalypt and pine forests. <em>New Forests</em>. 55 (3), 417-440</p>
-<p>Rubilar, RA., Valverde, JC., Barrientos, G., &amp; <strong>Campoe</strong>, OC. (2024). Water and temperature ecophysiological challenges of forests plantations under climate change. <em>Forests</em>. 15 (4), 654</p>
-<p>Hackman, J., Cook, R., Strahm, B., Carter, D., Woodley, A., Garcia, K., Albaugh, T., &amp; … (2024). Pinus taeda carryover phosphorus availability on the lower Atlantic Coastal Plain. <em>Forest Ecology and Management</em>. 555, 121701</p>
-<p>Beasley, C., Carter, DR., Albaugh, TJ., Enemo, D., Hong, DS., Cook, R., &amp; … (2024). Growth trends of loblolly pine age five or less in relation to soil type and management intensity. <em>Forest Ecology and Management</em>. 574, 122355</p>
-<p>Pimenta, EM., Ramalho, FMG., Dambroz, GBV., Couto, AM., <strong>Campoe</strong>, OC., &amp; … (2024). Planting spacing and genotype affected the tree growth and variation of wood density and lignin content along Eucalyptus trunks. <em>Industrial Crops and Products</em>. 222, 119595</p>
-<p>Bozo, D., Rubilar, R., <strong>Campoe</strong>, OC., Alzamora, RM., Elissetche, JP., &amp; … (2024). Soil and Site Productivity Effects on Above-and Belowground Radiata Pine Carbon Pools at Harvesting Age. <em>Plants</em>. 13 (24), 3482</p>
-<p>Santos, JA dos., <strong>Campoe</strong>, OC., Aspinwall, MJ., Souza, CR de., Stape, JL., &amp; … (2024). Climatic variables influence the photosynthetic capacity of forest plantations in Brazil. <em>New Forests</em>. 55 (6), 1939-1960</p>
-<p>Sumnall, MJ., Carter, DR., Albaugh, TJ., Cook, RL., <strong>Campoe</strong>, OC., &amp; Rubilar, RA. (2024). Evaluating the Influence of Row Orientation and Crown Morphology on Growth of Pinus taeda L. with Drone-Based Airborne Laser Scanning. <em>Plant Phenomics</em>. 6, 0264</p>
-<p>Lim, H., Medvigy, D., Mäkelä, A., Kim, D., Albaugh, TJ., Knier, A., Blaško, R., &amp; … (2024). Overlooked branch turnover creates a widespread bias in forest carbon accounting. <em>Proceedings of the National Academy of Sciences</em>. 121 (42), e2401035121</p>
-<p>Bozo, D., Rubilar, R., Alzamora, R., Elissetche, JP., <strong>Campoe</strong>, O., Valverde, JC., &amp; … (2024). Modelling Soil and Climate Effects on Radiata Pine Above and Belowground Carbon at contrasting sites in Chile. <em>MDPI</em>.</p>
-<p>Cirilo, NRM., Almeida, MNF de., Santos, VB dos., Souza, AJ de., &amp; … (2024). Impact of coppice and high stem management on Eucalyptus wood quality. <em>European Journal of Wood and Wood Products</em>. 1-14</p>
-<p>Basílio, JJN., <strong>Campoe</strong>, OC., Queiroz, TB., Souza, CR de., Carneiro, RL., &amp; … (2024). Fine Root Density Dynamics and Carbon Stock of Eucalyptus spp.: Interplay of Age, Genotype, and Edaphoclimatic Conditions. <em>Plants</em>. 13 (11), 1503</p>
-<p>Mantoani, MC., Guerra, LCC., Andrade, MF., Dias, MAFS., Dias, PLS., &amp; … (2024). Land-use patterns and fungal bioaerosols in the Brazilian Atlantic Forest biome. <em>Discover Environment</em>. 2 (1), 19</p>
-<p>Valverde, JC., Rubilar, R., Bozo, D., Medina, A., Pincheira, M., Emhard, V., &amp; … (2024). Use of soil respiration as a trial of drought susceptibility in Eucalyptus genotypes. <em>MDPI</em>.</p>
-<p>Bozo, D., Rubilar, R., Valverde, JC., Albaugh, T., Cook, R., <strong>Campoe</strong>, O., Carter, D., &amp; … (2024). Effect of planting density on Pinus radiata growth and branch diameter before canopy closure. <em>MDPI</em>.</p>
-<p>Chilton, K., <strong>Campoe</strong>, OC., Allan, N., &amp; Hinkle, H. (2024). Increasing Carbon Sequestration, Land Use Efficiency, and Building Decarbonization with Short Rotation. **.</p>
-<p>Sumnall, MJ., Albaugh, TJ., Carter, DR., Cook, RL., Hession, WC., <strong>Campoe</strong>, OC., &amp; … (2023). Estimation of individual stem volume and diameter from segmented UAV laser scanning datasets in Pinus taeda L. plantations. <em>International Journal of Remote Sensing</em>. 44 (1), 217-247</p>
-<p>Hakamada, R., Binkley, D., Cegatta, I., Alvares, C., <strong>Campoe</strong>, O., &amp; Stape, JL. (2023). Stocking response of Eucalyptus growth depends on site water deficit across a 2100-km gradient in Brazil. <em>Forest Ecology and Management</em>. 546, 121325</p>
-<p>Almeida, MNF., Vidaurre, GB., Louzada, JLPC., Pezzopane, JEM., &amp; … (2023). Wood density variations of E. urophylla clone among growth sites are related to climate. <em>Canadian Journal of Forest Research</em>. 53 (5), 343-353</p>
-<p>Pimenta, EM., Brito, EGS., Gomes, PF., Ramalho, FMG., Vidaurre, GB., &amp; … (2023). Planting spacing influences radial variation of basic density and chemical composition of wood from fast growing young Eucalyptus plantations. <em>Holzforschung</em>. 77 (9), 657-669</p>
-<p>Rubilar, R., Bozo, D., Albaugh, T., Cook, R., <strong>Campoe</strong>, O., Carter, D., Allen, HL., &amp; … (2023). Rotation-age effects of subsoiling, fertilization, and weed control on radiata pine growth at sites with contrasting soil physical, nutrient, and water limitations. <em>Forest Ecology and Management</em>. 544, 121213</p>
-<p>Caldeira, A., Krushe, AV., Mareschal, L., Silva, P da., Nouvellon, Y., <strong>Campoe</strong>, O., &amp; … (2023). Low nutrient losses by deep leaching after clearcutting and replanting Eucalyptus plantations in Brazil. <em>Forest Ecology and Management</em>. 534, 120866</p>
-<p>Barbosa, LO., Santos, JA dos., Gonçalves, AFA., <strong>Campoe</strong>, OC., Scolforo, JRS., &amp; … (2023). Competition in forest plantations: Empirical and process-based modelling in pine and eucalypt plantations. <em>Ecological Modelling</em>. 483, 110410</p>
-<p>Valverde, JC., Rubilar, R., Barrientos, G., Medina, A., Pincheira, M., Emhart, V., &amp; … (2023). Differences in rainfall interception among Eucalyptus genotypes. <em>Trees</em>. 37 (4), 1189-1200</p>
-<p>Pech, TM., <strong>Campoe</strong>, OC., Guillemot, J., &amp; MAIRE, GL. (2023). Caracterização anatômica do parênquima radial em clone de Eucalyptus. <em>Série Técnica IPEF</em>. 26 (48), 28-31</p>
-<p>Queiroz, TB., Montes, CR., &amp; <strong>Campoe</strong>, OC. (2023). A New Method to Calibrate Cardinal Temperatures for Eucalyptus Plantation. <em>Forests</em>. 14 (8), 1631</p>
-<p>Câmara, AP., Vidaurre, GB., Oliveira, JCL De., Moulin, JC., Almeida, MNF De., &amp; … (2023). Rainfall exclusion changes the sapwood of eucalyptus wood in humid and dry sites. <em>European Journal of Forest Research</em>. 142 (3), 627-640</p>
-<p>Félix, HJA., Cunha, FL., Rubilar, R., Basílio, JJN., &amp; <strong>Campoe</strong>, OC. (2023). Uso de isótopos com um proxy para quantificação de uso e eficiência da água em plantios de eucalipto ao longo de um gradiente climático no Brasil. <em>Série Técnica IPEF</em>. 26 (48)</p>
-<p>Maciel, JLM., Costa, JR da Silva., Silva, MR da., <strong>Campoe</strong>, OC., Guillemot, J., &amp; … (2023). Margem de segurança hidráulica na caracterização da resistência a seca de genótipos de Eucalyptus. <em>Série Técnica IPEF</em>. 26 (48)</p>
-<p>Oliveira, LB., Almeida, RS de., Cunha, FL., Castilho, PVE de., <strong>Campoe</strong>, OC., &amp; … (2023). Variabilidade genética em matrizes de espécies de Corymbia, aos 44 anos após o plantio. <em>Série Técnica IPEF</em>. 26 (48)</p>
-<p>Diniz, PC., Cunha, FL., Basílio, JJN., Gonçalves, AFA., <strong>Campoe</strong>, OC., &amp; … (2023). Comercialização do seguro de florestas no Brasil. <em>Série Técnica IPEF</em>. 26 (48)</p>
-<p>Basílio, JJN., Colmanetti, MAA., Cuadra, SV., Cunha, FL., Gonçalves, AFA., &amp; … (2023). Disponibilidade hídrica em solos com condições climáticas contrastantes cultivados com Eucalyptus sp.. <em>Série Técnica IPEF</em>. 26 (48)</p>
-<p>Maire, G le., Cornut, I., Guillemot, J., Nouvellon, Y., <strong>Campoe</strong>, O., Stape, JL., &amp; … (2023). Evaluating management and climatic scenarios on Eucalyptus plantations using a new ecophysiological model of water dynamics and wood production. <em>Série Técnica IPEF</em>. 26 (48)</p>
-<p>Cunha, FL., Gonçalves¹, AFA., Basílio¹, JJN., Souza, CR de., &amp; <strong>Campoe</strong>, OC. (2023). Padrões de fluxo e particionamento de C do clone Eucalyptus urophylla em diferentes gradientes climáticos no Brasil. <em>Série Técnica IPEF</em>. 26 (48)</p>
-<p>Silva, RP de Sousa., Santos, JA dos., <strong>Campoe</strong>, OC., Guillemot, J., Silva, MR da., &amp; … (2023). Relação da condutância estomática com o déficit de pressão de vapor de dois clones de Eucalyptus em diferentes manejos no período seco e chuvoso. <em>Série Técnica IPEF</em>. 26 (48)</p>
-<p>Ferreira, VB., Maire, G le., Feret, JB., Guillemot, J., &amp; <strong>Campoe</strong>, OC. (2023). Eucalyptus Leaf area index estimation from Sentinel 2 images: importance of genotype and sun and view acquisition geometry. <em>Série Técnica IPEF</em>. 26 (48)</p>
-<p>Oliveira, ÉT de., Maciel, JLM., <strong>Campoe</strong>, OC., Alvares, CA., Guillemot, J., &amp; … (2023). Atributos funcionais foliares na caracterização da resistência à seca de genótipos comerciais de Eucalyptus spp.. <em>Série Técnica IPEF</em>. 26 (48)</p>
-<p>Cunha, FL., Souza, CR de., Gonçalves¹, AFA., Basílio¹, JJN., Oliveira, LB., &amp; … (2023). Respostas da respiração do solo em plantios florestais submetidos a diferentes manejos silviculturais e gradientes de temperatura. <em>Série Técnica IPEF</em>. 26 (48)</p>
-<p>Costa, JR da Silva., Maciel, JLM., Silva, MR da., <strong>Campoe</strong>, OC., Alvares, CA., &amp; … (2023). O manejo silvicultural não afeta a tolerância à seca de genótipos comerciais de Eucalyptus sp.. <em>Série Técnica IPEF</em>. 26 (48)</p>
-<p>Lembrechts, JJ., Hoogen, J van den., Aalto, J., Ashcroft, MB., Frenne, P De., &amp; … (2022). Global maps of soil temperature. <em>Global change biology</em>. 28 (9), 3110-3144</p>
-<p>Sumnall, MJ., Albaugh, TJ., Carter, DR., Cook, RL., Hession, WC., <strong>Campoe</strong>, OC., &amp; … (2022). Effect of varied unmanned aerial vehicle laser scanning pulse density on accurately quantifying forest structure. <em>International Journal of Remote Sensing</em>. 43 (2), 721-750</p>
-<p>Ritz, AL., Thomas, VA., Wynne, RH., Green, PC., Schroeder, TA., Albaugh, TJ., &amp; … (2022). Assessing the utility of NAIP digital aerial photogrammetric point clouds for estimating canopy height of managed loblolly pine plantations in the southeastern United States. <em>International Journal of Applied Earth Observation and Geoinformation</em>. 113&nbsp;…</p>
-<p>Almeida, MNF., Vidaurre, GB., Louzada, JLPC., Pezzopane, JEM., &amp; … (2022). Differences in wood anatomy and chemistry of a Eucalyptus urophylla clone explained by site climate conditions. <em>Canadian Journal of Forest Research</em>. 52 (5), 834-844</p>
-<p>Shively, TJ., Cook, R., Maier, CA., Garcia, K., Albaugh, TJ., <strong>Campoe</strong>, O., &amp; … (2022). Readily available resources across sites and genotypes result in greater aboveground growth and reduced fine root production in Pinus taeda. <em>Forest Ecology and Management</em>. 521, 120431</p>
-<p>Colmanetti, MAA., Cuadra, SV., Lamparelli, RAC., Júnior, JB., Cabral, OMR., &amp; … (2022). Implementation and calibration of short-rotation eucalypt plantation module within the ECOSMOS land surface model. <em>Agricultural and Forest Meteorology</em>. 323, 109043</p>
-<p>Albaugh, TJ., Carter, DR., Cook, RL., <strong>Campoe</strong>, OC., Rubilar, RA., &amp; Creighton, JL. (2022). Improving Pinus taeda site index from rotation to rotation with silvicultural treatments. <em>Forest Ecology and Management</em>. 526, 120581</p>
-<p>Cornut, I., Delpierre, N., Laclau, JP., Guillemot, J., Nouvellon, Y., <strong>Campoe</strong>, O., &amp; … (2022). Potassium-limitation of forest productivity, part 1: A mechanistic model simulating the effects of potassium availability on canopy carbon and water fluxes in tropical eucalypt&nbsp;…. <em>EGUsphere</em>. 2022, 1-37</p>
-<p>Filho, A Caldeira., Krushe, AV., Mareschal, L., Silva, P da., Nouvellon, Y., &amp; … (2022). Very Low Nutrient Losses by Deep Leaching after Clearcutting Commercial Eucalyptus Plantations in Brazil. <em>Available at SSRN</em>. 4270148</p>
-<p>Nouvellon, Y., Bouillet, JP., Stape, JL., &amp; <strong>Campoe</strong>, OC. (2022). Guillemot J., Le Maire G., Alvares CA, Borges J., Chaves R., Figura MA, De Jesus GL, Leite F., Loos RA, Moreira G., Silva V., Stahl J., Laclau JP. <em>Duas décadas de cooperação científica CIRAD-ESALQ-IPEF</em>. 25 (47), 3-7</p>
-<p>Kupper, A., <strong>Campoe</strong>, OC., Queiroz, TB., &amp; Oliveira, GG de. (2022). Produtividade de Eucalyptus urophylla sob manejo de talhadia e reforma. **. 9° Congresso Florestal Brasileiro 1 (1), 412-415</p>
-<p>Bozo, D., Rubilar, R., Espinoza, Y., <strong>Campoe</strong>, O., Cook, R., Carter, D., &amp; Albaugh, T. (2022). Mid-Rotation Response of Soil Preparation Intensity and Timing of Weed Control on Radiata Pine. <em>Environmental Sciences Proceedings</em>. 22 (1), 51</p>
-<p>Valverde, JC., Rubilar, R., Medina, A., Mardones, O., Emhart, V., Bozo, D., &amp; … (2022). Generalized Tree Volume Equations for Eucalyptus Genotypes under Contrasting Irrigation. <em>Environmental Sciences Proceedings</em>. 22 (1), 70</p>
-<p>Cunha, FL., Basílio, JJN., &amp; <strong>Campoe</strong>, OC. (2022). INFLUÊNCIA DO GENÓTIPO NO PARTICIONAMENTO DO CARBONO EM PLANTIOS DE EUCALIPTO. <em>Galoá</em>.</p>
-<p>Ustulin, SMF., Maciel, JLM., Costa, J., <strong>Campoe</strong>, OC., Guillemot, J., &amp; Álvares, CA. (2022). UTILIZANDO O PONTO DE PERDA DE TURGOR PARA AFERIR A TOLERÂNCIA A SECA DE GENÓTIPOS DE Eucalyptus. <em>Galoá</em>.</p>
-<p>Oliveira, ÉT de., Costa, J., Maciel, JLM., <strong>Campoe</strong>, OC., Guillemot, J., &amp; … (2022). O SISTEMA SILVICULTURAL INTERFERE NA TOLERÂNCIA À SECA EM DIFERENTES CLONES DE Eucalyptus?. <em>Galoá</em>.</p>
-<p>Basílio, JJN., <strong>Campoe</strong>, OC., Cunha, FL., Carneiro, RL., Queiroz, T., Alvares, CA., &amp; … (2022). DISTRIBUIÇÃO EM PROFUNDIDADE DAS RAÍZES FINAS DE E. grandis× E. camaldulensis EM DIFERENTES CONDIÇÕES EDAFOCLIMÁTICAS. <em>Galoá</em>.</p>
-<p>Guillemot, J., Brancalion, PHS., Maire, G Le., Laclau, JP., Stape, JL., <strong>Campoe</strong>, O., &amp; … (2022). Melhorar a silvicultura de plantações com espécies de arvores nativas para auxiliar a restauração florestal. <em>IPEF</em>.</p>
-<p>Guillemot, J., Maire, G Le., Alvares, C., Borges, J., Chaves, R., Figura, MA., &amp; … (2022). Estudar os padrões ecofisiológicos para melhorar a sustentabilidade e o manejo das plantações de eucalipto de alta produtividade: O Programa Cooperativo EUCFLUX. <em>IPEF</em>.</p>
-<p>Maire, G Le., Attia, A., Bouillet, JP., <strong>Campoe</strong>, O., Christina, M., Cornut, I., &amp; … (2022). Modelando o balanço de radiação e os ciclos de carbono e água nas plantações de eucalipto. <em>IPEF</em>.</p>
-<p>Martello, M., Alvares, CA., Tavares, TR., Fiorio, PR., <strong>Campoe</strong>, OC., &amp; Carneiro, RL. (2022). Estimativa de altura de um teste clonal de Eucalyptus em diferentes idades utilizando imagens aéreas de baixa altitude. <em>Scientia Forestalis</em>. 50, 1-13</p>
-<p>Martell, M., Alvares, CA., Tavares, TR., Fiorio, PR., <strong>Campoe</strong>, OC., &amp; Carneiro, RL. (2022). Height estimation of a clonal Eucalyptus test at different ages using lowaltitude aerial imaging.. **.</p>
-<p>Sumnall, MJ., Trlica, A., Carter, DR., Cook, RL., Schulte, ML., <strong>Campoe</strong>, OC., &amp; … (2021). Estimating the overstory and understory vertical extents and their leaf area index in intensively managed loblolly pine (Pinus taeda L.) plantations using airborne laser scanning. <em>Remote Sensing of Environment</em>. 254, 112250</p>
-<p>Carter, DR., Allen, HL., Fox, TR., Albaugh, TJ., Rubilar, RA., <strong>Campoe</strong>, OC., &amp; … (2021). A 50-year retrospective of the Forest Productivity Cooperative in the southeastern United States: regionwide trials. <em>Journal of forestry</em>. 119 (1), 73-85</p>
-<p>Câmara, AP., Vidaurre, GB., Oliveira, JCL., Teodoro, PE., Almeida, MNF., &amp; … (2021). Changes in rainfall patterns enhance the interrelationships between climate and wood traits of eucalyptus. <em>Forest Ecology and Management</em>. 485, 118959</p>
-<p>Santos, JA dos., Matsumoto, SN., Trazzi, PA., Ramos, PAS., Oliveira, LS de., &amp; … (2021). Morphophysiological changes by mepiquat chloride application in Eucalyptus clones. <em>Trees</em>. 35 (1), 189-198</p>
-<p>Barbosa, LO., Finger, CAG., Costa, EA., <strong>Campoe</strong>, OC., &amp; Schons, CT. (2021). Using crown characterisation variables as indicators of the vigour, competition and growth of Brazilian pine. <em>Southern Forests: a Journal of Forest Science</em>. 83 (4), 240-253</p>
-<p>Gonçalves, AFA., Santos, JA., França, LCJ., <strong>Campoe</strong>, OC., Altoé, TF., &amp; … (2021). Use of the process-based models in forest research: a bibliometric review. <em>Cerne</em>. 27, e-102769</p>
-<p>Albaugh, TJ., Albaugh, JM., Carter, DR., Cook, RL., Cohrs, CW., Rubilar, RA., &amp; … (2021). Duration of response to nitrogen and phosphorus applications in mid-rotation Pinus taeda. <em>Forest Ecology and Management</em>. 498, 119578</p>
-<p>Brito, VV., Rubilar, RA., Cook, RL., <strong>Campoe</strong>, OC., <strong>Campoe</strong>, OC., Carter, DR., &amp; … (2021). Evaluating remote sensing indices as potential productivity and stand quality indicators for Pinus radiata plantations.. **.</p>
-<p>Grover, ZS., Cook, RL., Zapata, M., Urrego, J Byron., Albaugh, TJ., Zelaya, A., &amp; … (2021). Eucalyptus grandis Response to Calcium Fertilization in Colombia. <em>Forest Science</em>. 67 (6), 701-710</p>
-<p>Baroni, G de Resende., <strong>Campoe</strong>, OC., Júnior, MD., Topanotti, LR., &amp; … (2021). Mortality of Eucalyptus pilularis progenies and provenances after frost. <em>Pesquisa Florestal Brasileira</em>. 41</p>
-<p>Gonçalves, AFA., Santos, JA dos., França, LC de Jesus., <strong>Campoe</strong>, OC., &amp; … (2021). USE OF THE PROCESS-BASED MODELS APPLIED TO GLOBAL FOREST RESEARCH: A BIBLIOMETRIC ANALYSIS. <em>CERNE</em>.</p>
-<p>Binkley, D., <strong>Campoe</strong>, OC., Alvares, CA., Carneiro, RL., &amp; Stape, JL. (2020). Variation in whole-rotation yield among Eucalyptus genotypes in response to water and heat stresses: The TECHS project. <em>Forest Ecology and Management</em>. 462, 117953</p>
-<p>Rocha, SMG., Vidaurre, GB., Pezzopane, JEM., Almeida, MNF., Carneiro, RL., &amp; … (2020). Influence of climatic variations on production, biomass and density of wood in eucalyptus clones of different species. <em>Forest Ecology and Management</em>. 473, 118290</p>
-<p>Mattos, EM de., Binkley, D., <strong>Campoe</strong>, OC., Alvares, CA., &amp; Stape, JL. (2020). Variation in canopy structure, leaf area, light interception and light use efficiency among Eucalyptus clones. <em>Forest Ecology and Management</em>. 463, 118038</p>
-<p>Almeida, MNF de., Vidaurre, GB., Pezzopane, JEM., Lousada, JLPC., &amp; … (2020). Heartwood variation of Eucalyptus urophylla is influenced by climatic conditions. <em>Forest Ecology and Management</em>. 458, 117743</p>
-<p>Costa, SE de Lima., Santos, RC do., Vidaurre, GB., Castro, RVO., Rocha, SMG., &amp; … (2020). The effects of contrasting environments on the basic density and mean annual increment of wood from eucalyptus clones. <em>Forest Ecology and Management</em>. 458, 117807</p>
-<p>Hakamada, RE., Hubbard, RM., Moreira, GG., Stape, JL., <strong>Campoe</strong>, O., &amp; … (2020). Influence of stand density on growth and water use efficiency in Eucalyptus clones. <em>Forest Ecology and Management</em>. 466, 118125</p>
-<p><strong>Campoe</strong>, OC., Alvares, CA., Carneiro, RL., Binkley, D., Ryan, MG., Hubbard, RM., &amp; … (2020). Climate and genotype influences on carbon fluxes and partitioning in Eucalyptus plantations. <em>Forest Ecology and Management</em>. 475, 118445</p>
-<p>Hubbard, RM., Carneiro, RL., <strong>Campoe</strong>, O., Alvares, CA., Figura, MA., &amp; … (2020). Contrasting water use of two Eucalyptus clones across a precipitation and temperature gradient in Brazil. <em>Forest Ecology and Management</em>. 475, 118407</p>
-<p>Queiroz, TB., <strong>Campoe</strong>, OC., Montes, CR., Alvares, CA., Cuartas, MZ., &amp; … (2020). Temperature thresholds for Eucalyptus genotypes growth across tropical and subtropical ranges in South America. <em>Forest ecology and management</em>. 472, 118248</p>
-<p>Caldeira, DRM., Alvares, CA., <strong>Campoe</strong>, OC., Hakamada, RE., Guerrini, IA., &amp; … (2020). Multisite evaluation of the 3-PG model for the highest phenotypic plasticity Eucalyptus clone in Brazil. <em>Forest Ecology and Management</em>. 462, 117989</p>
-<p>Albaugh, TJ., Maier, CA., <strong>Campoe</strong>, OC., Yáñez, MA., Carbaugh, ED., Carter, DR., &amp; … (2020). Crown architecture, crown leaf area distribution, and individual tree growth efficiency vary across site, genetic entry, and planting density. <em>Trees</em>. 34, 73-88</p>
-<p>Câmara, AP., Vidaurre, GB., Oliveira, JCL., Picoli, EA de Toledo., &amp; … (2020). Changes in hydraulic architecture across a water availability gradient for two contrasting commercial Eucalyptus clones. <em>Forest Ecology and Management</em>. 474, 118380</p>
-<p>Soares, AAV., Scolforo, HF., Forrester, DI., Carneiro, RL., &amp; <strong>Campoe</strong>, OC. (2020). Exploring the relationship between stand growth, structure and growth dominance in Eucalyptus monoclonal plantations across a continent-wide environmental gradient in Brazil. <em>Forest Ecology and Management</em>. 474, 118340</p>
-<p>Pereira, WJ., Pappas, MCR., <strong>Campoe</strong>, OC., Stape, JL., Grattapaglia, D., &amp; … (2020). Patterns of DNA methylation changes in elite Eucalyptus clones across contrasting environments. <em>Forest Ecology and Management</em>. 474, 118319</p>
-<p>Scolforo, HF., Montes, C., Cook, RL., Allen, H Lee., Albaugh, TJ., Rubilar, R., &amp; … (2020). A New Approach for Modeling Volume Response from Mid-Rotation Fertilization of Pinus taeda L. Plantations. <em>Forests</em>. 11 (6), 646</p>
-<p>Schulte, ML., Cook, RL., Albaugh, TJ., Allen, HL., Rubilar, RA., Pezzutti, R., &amp; … (2020). Mid-rotation response of Pinus taeda to early silvicultural treatments in subtropical Argentina. <em>Forest Ecology and Management</em>. 473, 118317</p>
-<p>Hooker, JM., Oswald, BP., Stovall, JP., Williams, HM., &amp; Weng, Y. (2020). Assessing the establishment, growth, and survival of West Gulf Coast southern pines in east Texas. <em>Proceedings of the</em>. 20th biennial southern silvicultural research conference&nbsp;…</p>
-<p>Carter, DR., Albaugh, TJ., <strong>Campoe</strong>, OÁC., Grossman, JJ., Rubilar, RA., &amp; … (2020). Complementarity increases production in genetic mixture of loblolly pine (Pinus taeda L.) throughout planted range. <em>Ecosphere</em>. 11 (11), e03279</p>
-<p><strong>Campoe</strong>, OC., &amp; Binkley, D. (2020). Environmental and genetic influences on growth in Eucalyptus plantations: The TECHS special issue. **.</p>
-<p>Schulte, ML., Cook, RL., Albaugh, TJ., Burkhart, HE., Creighton, JL., &amp; … (2020). FERTILIZATION AND THINNING EFFECTS ON PLANTATION LOBLOLLY PINE TAPER AND WOOD QUALITY. **.</p>
-<p>Almeida, MNF., Vidaurre, GB., Pezzopane, JEM., Lousada, JLPC., &amp; … (2020). Heartwood variation of Eucalyptus urophylla is influenced by climatic conditions.. **.</p>
-<p>Brancalio, JG PHS., <strong>Campoe</strong>, OC., Mendes, JCT., Noel, C., Moreira, GG., Melis, J van., &amp; …, JL. (2019). Intensive silviculture enhances biomass accumulation and tree diversity recovery in tropical forest restoration. <em>Ecological Applications</em>. 0</p>
-<p>Albaugh, TJ., Fox, TR., Cook, RL., Raymond, JE., Rubilar, RA., &amp; <strong>Campoe</strong>, OC. (2019). Forest fertilizer applications in the southeastern United States from 1969 to 2016. <em>Forest Science</em>. 65 (3), 355-362</p>
-<p>Scolforo, HF., McTague, JP., Burkhart, H., Roise, J., <strong>Campoe</strong>, O., &amp; Stape, JL. (2019). Eucalyptus growth and yield system: Linking individual-tree and stand-level growth models in clonal Eucalypt plantations in Brazil. <em>Forest Ecology and Management</em>. 432, 1-16</p>
-<p>Araujo, MJ de., Paula, RC de., <strong>Campoe</strong>, OC., &amp; Carneiro, RL. (2019). Adaptability and stability of eucalypt clones at different ages across environmental gradients in Brazil. <em>Forest Ecology and Management</em>. 454, 117631</p>
-<p>Attia, A., Nouvellon, Y., Cuadra, S., Cabral, O., Laclau, JP., Guillemot, J., &amp; … (2019). Modelling carbon and water balance of Eucalyptus plantations at regional scale: Effect of climate, soil and genotypes. <em>Forest Ecology and Management</em>. 449, 117460</p>
-<p>Maire, G Le., Guillemot, J., <strong>Campoe</strong>, OC., Stape, JL., Laclau, JP., &amp; Nouvellon, Y. (2019). Light absorption, light use efficiency and productivity of 16 contrasted genotypes of several Eucalyptus species along a 6-year rotation in Brazil. <em>Forest Ecology and Management</em>. 449, 117443</p>
-<p>Scolforo, HF., McTague, JP., Burkhart, H., Roise, J., <strong>Campoe</strong>, O., &amp; Stape, JL. (2019). Yield pattern of eucalypt clones across tropical Brazil: An approach to clonal grouping. <em>Forest Ecology and Management</em>. 432, 30-39</p>
-<p>Jr, M Dobner., &amp; <strong>Campoe</strong>, OC. (2019). Meteorological effects on 30-years-grown Pinus taeda under a gradient of crown thinning intensities in southern Brazil. <em>Forest Ecology and Management</em>. 453, 117624</p>
-<p>Maire, G Le., Guillemot, J., <strong>Campoe</strong>, O., Stape, JL., Laclau, JP., &amp; Nouvellon, Y. (2019). Light use efficiency and productivity of 16 genotypes of Eucalyptus along a 6-year rotation in Brazil. **.</p>
-<p>Junior, M Dobner., &amp; <strong>Campoe</strong>, OC. (2019). Meteorological effects on 30-years-grown Pinus taeda under a gradient of crown thinning intensities in southern Brazil. <em>Elsevier</em>.</p>
-<p>Colmanetti, A., Anderson, M., Cuadra, S Vianna., Attia, A., Nouvellon, Y., &amp; … (2019). Adaptation of Agro-IBIS model for Eucalyptus carbon budget estimation at regional level-a case study in Sao Paulo State, Brazil. <em>EMBRAPA</em>.</p>
-<p>Rubilar, RA., Allen, HL., Fox, TR., Cook, RL., Albaugh, TJ., &amp; <strong>Campoe</strong>, OC. (2018). Advances in Silviculture of Intensively Managed Plantations. <em>Current Forestry Reports</em>. 1-12</p>
-<p>Albaugh, TJ., Fox, TR., Maier, CA., <strong>Campoe</strong>, OC., Rubilar, RA., Cook, RL., &amp; … (2018). A common garden experiment examining light use efficiency and heat sum to explain growth differences in native and exotic Pinus taeda. <em>Forest Ecology and Management</em>. 425, 35-44</p>
-<p>Binkley, D., <strong>Campoe</strong>, OC., Alvares, C., Carneiro, RL., Cegatta, Í., &amp; Luiz, SJ. (2017). The interactions of climate, spacing and genetics on clonal Eucalyptus plantations across Brazil and Uruguay. <em>Forest Ecology and Management</em>. 405, 271-283</p>
-<p>Lambais, GR., Jourdan, C., Piccolo, M de Cássia., Germon, A., Pinheiro, RC., &amp; … (2017). Contrasting phenology of Eucalyptus grandis fine roots in upper and very deep soil layers in Brazil. <em>Plant and Soil</em>. 421, 301-318</p>
-<p>Oliveira, J de Castro., Féret, JB., Ponzoni, FJ., Nouvellon, Y., &amp; … (2017). Simulating the canopy reflectance of different eucalypt genotypes with the DART 3-D model. <em>IEEE journal of selected topics in applied earth observations and remote&nbsp;…</em>.</p>
-<p>Pinheiro, JPL Rafael Costa., Jr., José Carlos de Deus., Nouvellon, Yann., &amp; …, Otávio. (2016). A fast exploration of very deep soil layers by Eucalyptus seedlings and clones in Brazil. <em>Forest Ecology and Management</em>. 366, 143-152</p>
-<p><strong>Campoe</strong>, OC., Munhoz, JSB., Alvares, CA., Carneiro, RL., Mattos, EM de., &amp; … (2016). Meteorological seasonality affecting individual tree growth in forest plantations in Brazil. <em>Forest Ecology and Management</em>. 380, 149-160</p>
-<p>Silva, DJL Paulo H. M.., <strong>Campoe</strong>, Otavio C.., &amp; Paula, Rinaldo C. de. (2016). Seedling Growth and Physiological Responses of Sixteen Eucalypt Taxa under Controlled Water Regime. <em>Forests</em>. 7 (6)</p>
-<p>Christina, M., Nouvellon, Y., Laclau, JP., Stape, JL., &amp; … (2016). Sensitivity and uncertainty analysis of the carbon and water fluxes at the tree scale inEucalyptus plantations using a metamodeling approach. <em>Canadian Journal of Forest Research</em>. 46, 297-309</p>
-<p>Ferez, APC., <strong>Campoe</strong>, OC., Mendes, JCT., &amp; Stape, JL. (2015). Silvicultural opportunities for increasing carbon stock in restoration of Atlantic forests in Brazil. <em>Forest Ecology and Management</em>. 40-45</p>
-<p>Görgens, EB., Packalen, P., Silva, AGP., Alvares, CA., <strong>Campoe</strong>, OC., Stape, JL., &amp; … (2015). Stand volume models based on stable metrics as from multiple ALS acquisitions inEucalyptus plantations. <em>Annals of Forest Science</em>. 489-498</p>
-<p>Silva, LCER AGP., Görgens, EB., <strong>Campoe</strong>, OC., Alvares, CA., &amp; Stape, JL. (2015). Assessing biomass based on canopy height profiles using airborne laser scanning data in eucalypt plantations. <em>Scientia Agricola</em>. 72 (6), 504-512</p>
-<p>Silva, PHM., <strong>Campoe</strong>, OC., Vieira, IG., &amp; Paula, RC. (2015). Aplicação foliar de boro em eucalipto sob estresse hídrico. <em>Scientia Forestalis</em>. 43 (106), 395-405</p>
-<p>Silva, PHM., <strong>Campoe</strong>, OC., Vieira, IG., &amp; Paula, RC. (2015). Leaf Boron application in eucalypt under water stress.. **.</p>
-<p><strong>Campoe</strong>, OC., Iannelli, C., Stape, JL., Cook, RL., Mendes, JCT., &amp; Vivian, R. (2014). Atlantic forest tree species responses to silvicultural practices in a degraded pasture restoration plantation: From leaf physiology to survival and initial growth. <em>Forest Ecology and Management</em>. 313, 233-242</p>
-<p>Stape, JL., Binkley, D., Grattapaglia, D., <strong>Campoe</strong>, O., Alvares, C., &amp; Mattos, E. (2014). Fatores hídricos e as decisões de silvicultura, de melhoramento e de proteção na eucaliptocultura: O programa TECHS. <em>Encontro Bras. Silvic</em>. 3, 81-98</p>
-<p>Binkley, D., <strong>Campoe</strong>, OC., Gspaltl, M., &amp; Forrester, DI. (2013). Light absorption and use efficiency in forests: Why patterns differ for trees and stands. <em>Forest ecology and management</em>. 288, 5-13</p>
-<p><strong>Campoe</strong>, OC., Stape, JL., Nouvellon, Y., Laclau, JP., Bauerle, WL., Binkley, D., &amp; … (2013). Stem production, light absorption and light use efficiency between dominant and non-dominant trees of Eucalyptus grandis across a productivity gradient in Brazil. <em>Forest Ecology and Management</em>. 288, 14-20</p>
-<p><strong>Campoe</strong>, OC., Stape, JL., Albaugh, TJ., Allen, HL., Fox, TR., Rubilar, R., &amp; … (2013). Fertilization and irrigation effects on tree level aboveground net primary production, light interception and light use efficiency in a loblolly pine plantation. <em>Forest Ecology and Management</em>. 288, 43-48</p>
-<p>Righi, CA., <strong>Campoe</strong>, OC., Bernardes, MS., Lunz, AMP., Piedade, SMS., &amp; … (2013). Influence of rubber trees on leaf-miner damage to coffee plants in an agroforestry system. <em>Agroforestry systems</em>. 87, 1351-1362</p>
-<p><strong>Campoe</strong>, OC., Stape, JL., Laclau, JP., Marsden, C., &amp; Nouvellon, Y. (2012). Stand-level patterns of carbon fluxes and partitioning in a Eucalyptus grandis plantation across a gradient of productivity, in&nbsp;São Paulo State, Brazil. <em>Tree physiology</em>. 32 (6), 696-706</p>
-<p>Gazell, ACF., Righi, CA., Stape, JL., &amp; <strong>Campoe</strong>, OC. (2012). Tree species richness, does it play a key role on a forest restoration plantation?. <em>Bosque</em>. 33 (3), 245-248</p>
-<p><strong>Campoe</strong>, OC., Stape, JL., &amp; Mendes, JCT. (2010). Can intensive management accelerate the restoration of Brazil’s Atlantic forests?. <em>Forest Ecology and Management</em>. 259 (9), 1808-1814</p>
-<p><strong>Campoe</strong>, OC., Stape, JL., Laclau, JP., Marsden, C., &amp; Nouvellon, Y. (2010). Patterns of carbon flux, partitioning and light use efficiency in Eucalyptus grandis plantation over a gradient of productivity in. **.</p>
-<p><strong>Campoe</strong>, OC. (2008). Efeito de práticas silviculturais sobre a produtividade primária líquida de madeira, o índice de área foliar e a eficiência do uso da luz em plantios de restauração da Mata&nbsp;…. <em>Universidade de São Paulo</em>.</p>
-<p>Liddell, MJ., Nieullet, N., <strong>Campoe</strong>, OC., &amp; Freiberg, M. (2007). Assessing the above‐ground biomass of a complex tropical rainforest using a canopy crane. <em>Austral Ecology</em>. 32 (1), 43-58</p>
-<p>Bernardes, MS., <strong>Campoe</strong>, OC., &amp; Righi, CA. (2006). Influência do sombreamento sobre a infestação de bicho-mineiro em cafeeiros cultivados em um sistema agroflorestal e em monocultivo. <em>Bases científicas para o desenvolvimento sustentável; resumos</em>.</p>
-<p><strong>Campoe</strong>, OC., Righi, CA., Favarin, JL., Bernardes, MS., Costa, JD., &amp; Engel, VL. (2003). Quantificação da infestação de bicho-mineiro em cafeeiros, sob diferentes condições de cultivo. <em>Agropecuária; resumos</em>.</p>
-<p><strong>Campoe</strong>, OC., Righi, CA., Christoffoleti, PJ., Bernardes, MS., Costa, JD., &amp; … (2003). Avaliação da densidade populacional de plantas daninhas em um sistema agroflorestal de seringueira e cafeeiro. <em>Agropecuária; resumos</em>.</p>
-<p>Cunha, FL., <strong>Campoe</strong>, O., Souza, CR de., Lopes, I Leite &amp;., Alvares, CA., &amp; … (NA). Carbon Partitioning as a Drought-Tolerance Strategy in Clonal Eucalyptus Under Thermal and Water Stress. <em>Isaira and Alvares, Clayton Alcarde and Stape, Jose Luiz, Carbon&nbsp;…</em>.</p>
-<p>Cunha, FL., <strong>Campoe</strong>, O., Souza, CR de., Lopes, I Leite &amp;., Nouvellon, Y., &amp; … (NA). Carbon Fluxes and Partitioning in Eucalyptus and Pinus Plantations Across a Climatic Gradient in Brazil. **.</p>
-<p><strong>Campoe</strong>, O., Loos, R., Bouillet, JP., &amp; Laclau, JP. (NA). Factors controlling carbon and water balances on fast growing Eucalyptus plantations. <em>PORTO SEGURO, BAHIA, BRAZIL</em>. 14th to 18th| NOVEMBER| 2011, 4</p>
-<p>Hackman, JJ., Cook, R., Garcia, K., Carter, D., Woodley, A., Strahm, BS., &amp; … (NA). Pinus Taeda Phosphorus Carryover Effects on the Atlantic Coastal Plain. <em>Available at SSRN</em>. 456308</p>
-<p>Carter, D., Albaugh, TJ., Sumnall, M., Grossman, JJ., <strong>Campoe</strong>, O., Cook, R., &amp; … (NA). Crown Complementarity Rather than Crown Selection Contributes to Stem Complementarity in Genetic Mixtures of Pinus Taeda L. <em>Available at SSRN</em>. 431054</p>
-<p>Almeida, MNF., Vidaurre, GB., Louzada, JLPC., Pezzopane, JEM., &amp; … (NA). Differences in wood anatomy and chemistry of an E. urophylla clone explained by site climate conditions. <em>NRC Research Press (a division of Canadian Science Publishing)</em>.</p>
-<p>Colmanetti, MA Almeida., Cuadra, S., Lamparelli, RAC., Júnior, J Bortolucci., &amp; … (NA). Implementation and calibration of short-rotation eucalypt plantation module within the ECOSMOS land surface model. **.</p>
-</section>
-<section id="orcid" class="level1">
-<h1>ORCID</h1>
+
+<section id="project-map" class="level1">
+<h1>Project Map</h1>
+<p>The first material is a map of the study sites.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rorcid)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"fig.png"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="fig.png" class="img-fluid figure-img" width="450"></p>
+</figure>
 </div>
+</div>
+</div>
+</section>
+<section id="author-references-list" class="level1">
+<h1>Author references list</h1>
+<p>The second material is a code for a curated list of references for a given collaborator (example with myself).</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scholar)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>scholar_id <span class="ot">&lt;-</span> <span class="st">"3n0aRksAAAAJ"</span> <span class="co"># Daniel Luis Mascia Vieira</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>scholar_id <span class="ot">&lt;-</span> <span class="st">"0f_YV1wAAAAJ"</span> <span class="co"># Pedro Brancalion</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>scholar_id <span class="ot">&lt;-</span> <span class="st">"lauW7mQAAAAJ"</span> <span class="co"># Otavio C. Campoe</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>scholar_id <span class="ot">&lt;-</span> <span class="st">"sM0Z2yIAAAAJ"</span> <span class="co"># Sylvain SChmitt</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># this is your author scholar Id, it'll be found in the adress of your scholar profile after user=and before &amp;</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">#Get publication record from scholar</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">get_publications</span>(scholar_id)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(df) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"title"</span>,<span class="st">"authors"</span>,<span class="st">"journal"</span>,<span class="st">"number"</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>                  <span class="st">"total_citations"</span>,<span class="st">"publication_date"</span>,<span class="st">"cid"</span>,<span class="st">"pubid"</span>)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># unfortunately the doi is not linked, so I'll just format all articles:</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">format_publications</span>(scholar_id, <span class="st">"Schmitt"</span>) <span class="sc">|&gt;</span> <span class="fu">cat</span>(<span class="at">sep=</span><span class="st">'</span><span class="sc">\n\n</span><span class="st">'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Rojat, M., Vieilledent, G., <strong>Schmitt</strong>, S., Pélissier, R., &amp; Pouteau, R. (2026). Applications of joint species distribution models in community ecology: a systematic literature review. <em>ARPHA Preprints</em>. 7, e217001</p>
+<p>Cazzaniga, SG., Lauber, T., Hoogen, J Van Den., Beaury, EM., Bueno, CG., &amp; … (2026). Mycorrhizal strategy of non-native plants varies with biome and disturbance. <em>Nature ecology &amp; evolution</em>. 1-14</p>
+<p>Rojat, M., Vieilledent, G., <strong>Schmitt</strong>, S., Pélissier, R., Flores, O., &amp; Pouteau, R. (2026). Weak consensus among statistical modelling, functional and expert-based estimates of invasive-threatened plant interactions. **.</p>
+<p>Rakotoarisoa, M., <strong>Schmitt</strong>, S., Hof, P vant., Rivas-Torres, G., Tysklind, N., &amp; … (2026). Species delimitation and genetic diversity of the Eschweilera (Lecythidaceae) species complex in French Guiana and Ecuador using a sequence-based genomic microsatellite genotyping. <em>ARPHA Preprints</em>. 7, e203217</p>
+<p>Blanfort, V., Demenois, J., Hrabanski, M., Viovy, N., Ndione, JA., Waongo, M., &amp; … (2026). Atlas of world agriculture and food systems in the face of climate change. <em>Climate Impacts and Challenges in Agriculture, Forests and Food Systems&nbsp;…</em>.</p>
+<p>Leroy, T., <strong>Schmitt</strong>, S., &amp; Gerber, S. (2026). Se gli alberi mutano con troppa lentezza. <em>Le Scienze</em>. 56-61</p>
+<p>Kass, JM., Smith, AB., Warren, DL., Vignali, S., <strong>Schmitt</strong>, S., Aiello‐Lammens, ME., &amp; … (2025). Achieving higher standards in species distribution modeling by leveraging the diversity of available software. <em>Ecography</em>. 2025 (2), e07346</p>
+<p><strong>Schmitt</strong>, S., Tysklind, N., Heuertz, M., &amp; Hérault, B. (2025). Selection in space and time: Individual tree growth is adapted to tropical forest gap dynamics. <em>Molecular Ecology</em>. 34 (7), e16392</p>
+<p><strong>Schmitt</strong>, S., Fischer, FJ., Ball, JGC., Barbier, N., Boisseaux, M., Bonal, D., &amp; … (2025). TROLL 4.0: representing water and carbon fluxes, leaf phenology, and intraspecific trait variation in a mixed-species individual-based forest dynamics model–Part 2: Model&nbsp;…. <em>Geoscientific Model Development</em>. 18 (16), 5205-5243</p>
+<p>Maréchaux, I., Fischer, FJ., <strong>Schmitt</strong>, S., &amp; Chave, J. (2025). TROLL 4.0: representing water and carbon fluxes, leaf phenology and intraspecific trait variation in a mixed-species individual-based forest dynamics model–Part 1: Model&nbsp;…. <em>Geoscientific Model Development</em>. 2025, 1-97</p>
+<p>Kouassi, A K.., Zo-Bi, I C.., Hérault, B., Konan, I K.., Dago, M R.., Lasbats, B., &amp; … (2025). Tree growth in West African cocoa agroforestry systems: high timber yields and superior performance of natural regeneration. <em>Annals of Forest Science</em>. 82 (1), 17</p>
+<p>Bonnier, J., Laguna, E Sáez., Francisco, T., Troispoux, V., Brunaux, O., &amp; … (2025). Wet Season Environments Drive Local Adaptation in the Timber Tree Dicorynia guianensis in French Guiana. <em>Molecular Ecology</em>. 34 (23), e17759</p>
+<p>Gerkema, J., Bunker, DE., Cunliffe, AM., Bazzato, E., Marignani, M., Sitzia, T., &amp; … (2025). Robustness and limitations of maximum entropy in plant community assembly. <em>Ecological informatics</em>. 86, 103031</p>
+<p>Hes, G., Badouard, V., Burban, B., Cazal, J., Courtois, EA., Derroire, G., &amp; … (2025). East Amazon forest understory temperatures reached a record high in 2023–2024. <em>Scientific Reports</em>. 15 (1), 43423</p>
+<p>Maréchaux, I., Fischer, F Jörg., <strong>Schmitt</strong>, S., &amp; Chave, J. (2025). The need and challenges of jointly simulating vegetation structure, diversity and ecosystem functioning: a tropical forest perspective. <em>EGU General Assembly Conference Abstracts, EGU</em>. U25-10623</p>
+<p>Leroy, T., <strong>Schmitt</strong>, S., &amp; Gerber, S. (2025). Les mutations somatiques des arbres, un atout insuffisant pour s’ adapter au changement climatique. <em>Pour la science</em>. 11 p.</p>
+<p>Leroy, T., <strong>Schmitt</strong>, S., &amp; Gerber, S. (2025). Adaptation au changement climatique: quand les arbres ne mutent pas assez vite. <em>Pour la Science</em>. 576 (10), 54-61</p>
+<p>Blanfort, V., Demenois, J., Hrabanski, M., Viovy, N., Ndione, JA., Waongo, M., &amp; … (2025). Atlas des agricultures du monde et des systèmes alimentaires face au changement climatique. **.</p>
+<p>Gargiulo, R., Decroocq, V., González‐Martínez, SC., Paz‐Vinas, I., Aury, J., &amp; … (2024). Estimation of contemporary effective population size in plant populations: Limitations of genomic datasets. <em>Evolutionary Applications</em>. 17 (5), e13691</p>
+<p><strong>Schmitt</strong>, S., Heuret, P., Troispoux, V., Beraud, M., Cazal, J., Chancerel, É., &amp; … (2024). Low-frequency somatic mutations are heritable in tropical trees Dicorynia guianensis and Sextonia rubra. <em>Proceedings of the National Academy of Sciences</em>. 121 (10), e2313312121</p>
+<p>Badouard, V., <strong>Schmitt</strong>, S., Salzet, G., Gaquiere, T., Rojat, M., Bedeau, C., &amp; … (2024). LoggingLab: An R package to simulate reduced-impact selective logging in tropical forests using forest inventory data. <em>Ecological Modelling</em>. 487, 110539</p>
+<p>Bonnier, J., <strong>Schmitt</strong>, S., Laguna, ES., Troispoux, V., Cazal, SO., Traissac, S., &amp; … (2024). Potential for evolutionary responses to climate change in the tropical tree species Dicorynia guianensis [844]. <em>European Congress of Conservation Biology (ECCB</em>. 2024), 273-174</p>
+<p><strong>Schmitt</strong>, S. (2024). Ecological genomics of niche exploitation and individual performance in tropical forest trees. <em>BOIS ET FORETS DES TROPIQUES</em>. 87-88</p>
+<p><strong>Schmitt</strong>, S., &amp; Boisseaux, M. (2023). Higher local intra-than interspecific variability in water-and carbon-related leaf traits among Neotropical tree species. <em>Annals of Botany</em>. 131 (5), 801-811</p>
+<p><strong>Schmitt</strong>, S., Hérault, B., &amp; Derroire, G. (2023). High intraspecific growth variability despite strong evolutionary legacy in an Amazonian forest. <em>Ecology letters</em>. 26 (12), 2135-2146</p>
+<p><strong>Schmitt</strong>, S., Salzet, G., Fischer, FJ., Maréchaux, I., &amp; Chave, J. (2023). rcontroll: An R interface for the individual‐based forest dynamics simulator TROLL. <em>Methods in Ecology and Evolution</em>. 14 (11), 2749-2757</p>
+<p><strong>Schmitt</strong>, S., Trueba, S., Coste, S., Ducouret, É., Tysklind, N., Heuertz, M., Bonal, D., &amp; … (2022). Seasonal variation of leaf thickness: An overlooked component of functional trait variability. <em>Plant Biology</em>. 24 (3), 458-463</p>
+<p><strong>Schmitt</strong>, S., Leroy, T., Heuertz, M., &amp; Tysklind, N. (2022). Somatic mutation detection: a critical evaluation through simulations and reanalyses in oaks. <em>Peer Community Journal</em>. 2 (e68), 2022</p>
+<p><strong>Schmitt</strong>, S., Hérault, B., &amp; Derroire, G. (2022). High intraspecific growth variability despite strong evolutionary heritage in a neotropical forest. <em>bioRxiv</em>. 2022.07. 27.501745</p>
+<p><strong>Schmitt</strong>, S., Tysklind, N., Hérault, B., &amp; Heuertz, M. (2021). Topography drives microgeographic adaptations of closely related species in two tropical tree species complexes. <em>Molecular Ecology</em>. 30 (20), 5080-5093</p>
+<p><strong>Schmitt</strong>, S., Tysklind, N., Derroire, G., Heuertz, M., &amp; Hérault, B. (2021). Topography shapes the local coexistence of tree species within species complexes of Neotropical forests. <em>Oecologia</em>. 196 (2), 389-398</p>
+<p><strong>Schmitt</strong>, S., Raevel, V., Réjou‐Méchain, M., Ayyappan, N., Balachandran, N., &amp; … (2021). Canopy and understorey tree guilds respond differently to the environment in an Indian rain forest. <em>Journal of Vegetation Science</em>. 32 (5), e13075</p>
+<p>Kattge, J., Bönisch, G., Díaz, S., Lavorel, S., Prentice, IC., Leadley, P., &amp; … (2020). TRY plant trait database–enhanced coverage and open access. <em>Global change biology</em>. 26 (1), 119-188</p>
+<p><strong>Schmitt</strong>, S., Maréchaux, I., Chave, J., Fischer, FJ., Piponiot, C., Traissac, S., &amp; … (2020). Functional diversity improves tropical forest resilience: Insights from a long‐term virtual experiment. <em>Journal of Ecology</em>. 108 (3), 831-843</p>
+<p><strong>Schmitt</strong>, S., Hérault, B., Ducouret, É., Baranger, A., Tysklind, N., Heuertz, M., &amp; … (2020). Topography consistently drives intra‐and inter‐specific leaf trait variation within tree species complexes in a Neotropical forest. <em>Oikos</em>. 129 (10), 1521-1530</p>
+<p><strong>Schmitt</strong>, S. (2020). Génomique écologique de l’exploitation de niche et de la performance individuelle chez les arbres forestiers tropicaux. <em>Université de Bordeaux</em>.</p>
+<p><strong>Schmitt</strong>, S., Pouteau, R., Justeau, D., Boissieu, F De., &amp; Birnbaum, P. (2017). ssdm: An r package to predict distribution of species richness and composition based on stacked species distribution models. <em>Methods in Ecology and Evolution</em>. 8 (12), 1795-1803</p>
+<p>Kass, JM., Smith, AB., Warren, DL., Vignali, S., Aiello-Lammens, ME., Arlé, E., &amp; … (NA). Achieving higher standards in species distribution modeling by leveraging the diversity of available software: tutorials. <em>Zenodo</em>.</p>
 </section>
 
 </main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
@@ -315,195 +244,348 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
       return codeEl.innerText;
     }
-  });
-  clipboard.on('success', function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  });
-  function tippyHover(el, contentFn) {
-    const config = {
-      allowHTML: true,
-      content: contentFn,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start'
-    };
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      return note.innerHTML;
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
       });
     }
-  }
-});
-</script>
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 </div> <!-- /content -->
+
 
 
 
